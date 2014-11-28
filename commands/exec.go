@@ -3,6 +3,7 @@ package commands
 import (
 	"flag"
 	"fmt"
+	"strings"
 )
 
 type ExecCommand struct {
@@ -10,7 +11,11 @@ type ExecCommand struct {
 }
 
 func (c *ExecCommand) Help() string {
-	return fmt.Sprintf("Help %s\n", c.Cmd)
+	helpText := `
+Usage: 
+`
+
+	return strings.TrimSpace(helpText)
 }
 
 func (c *ExecCommand) Run(args []string) int {
